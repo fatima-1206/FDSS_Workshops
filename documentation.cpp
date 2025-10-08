@@ -1,48 +1,51 @@
+/**
+ * @file math_utils.cpp
+ * @brief Simple math utility functions demonstrating Doxygen.
+ * 
+ * This file contains basic functions to perform mathematical
+ * and logical operations — perfect for learning functions, 
+ * parameters, return types, and documentation.
+ */
 #include <iostream>
-
-void uselessFunction(int param);
+using namespace std;
 
 /**
- * @brief Demonstrates various variable types and control flow constructs.
- *
- * This function takes an integer parameter and performs the following actions:
+ * @brief Adds two integers.
  * 
- * - Initializes a local variable with the parameter value.
- * - Declares a static variable to persist its value across function calls.
- * 
- * - Creates a reference to the local variable.
- * 
- * - Declares a constant integer.
- * 
- * - If the local variable is greater than zero, iterates from 0 to localVar - 1,
- * 
- *   printing the iteration number to standard output.
- * 
- * - Otherwise, prints a message indicating no iterations.
- * 
- * - Adds the local variable's value to the static variable.
- *
- * @param param The integer value used for local variable initialization and loop control.
- * @return void
+ * Demonstrates parameter passing and returning a value.
+ * @param a First integer.
+ * @param b Second integer.
+ * @return Sum of a and b.
  */
-void uselessFunction(int param) {
-    int localVar = param;
-    static int staticVar = 0;
-    int& refVar = localVar;
-    const int constVar = 42;
-    if (localVar > 0) {
-        for (int i = 0; i < localVar; ++i) {
-            std::cout << "Iteration " << i << std::endl;
-        }
-    } else {
-        std::cout << "No iterations." << std::endl;
-    }
-
-    staticVar += localVar;
-    return;
+int add(int a, int b) {
+    return a + b;
 }
 
-int main() {
-    uselessFunction(3);
-    return 0;
+/**
+ * @brief Checks if a number is prime.
+ * 
+ * Uses a loop and conditional statements to test primality.
+ * @param n Number to check.
+ * @return true if n is prime, false otherwise.
+ */
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+/**
+ * @brief Prints all prime numbers up to a limit.
+ * 
+ * Demonstrates loops, function calling, and variable scope.
+ * @param limit Upper range for printing primes.
+ */
+void printPrimes(int limit) {
+    for (int i = 2; i <= limit; i++) {
+        if (isPrime(i)) {
+            printf("%d ", i);
+        }
+    }
 }

@@ -1,5 +1,4 @@
+*
+!*.ipynb
+!*.cpp
 c.ipynb
-# test.cpp
-*.exe
-*.
-*exe
