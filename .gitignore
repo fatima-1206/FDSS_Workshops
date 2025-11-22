@@ -2,3 +2,5 @@
 !*.ipynb
 !*.cpp
 c.ipynb
+config.bat
+node_modules
